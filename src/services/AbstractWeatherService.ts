@@ -12,6 +12,7 @@ export default abstract class AbstractWeatherService<R, P> {
 
   // This is the method that will be called for any service using the weather API
   async fetch(params: P) : Promise<R> {
+    console.debug(`Fetching data from ${this.url} with params ${this.getParams(params)}`);
     const { data } = await axios.get<R>(this.url, { params: this.getParams(params) });
     return data;
   }
