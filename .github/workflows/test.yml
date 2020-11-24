@@ -32,4 +32,6 @@ jobs:
       # Run all the Jest tests
       - name: Run project unit tests
         run: npm run test
+        env:
+          REACT_APP_WEATHER_API_KEY: ${{ secrets.WEATHER_API_KEY }}
 
