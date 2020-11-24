@@ -7,3 +7,7 @@ test('renders learn react link', () => {
   const linkElement = screen.getByText(/learn react/i);
   expect(linkElement).toBeInTheDocument();
 });
+
+test('Environment variables exist', () => {
+  expect(process.env.REACT_APP_WEATHER_API_KEY).toBeTruthy();
+});
