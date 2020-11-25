@@ -1,6 +1,9 @@
 import AbstractWeatherService, {IQueried} from "../AbstractWeatherService";
 
-export default class LocationService extends AbstractWeatherService<ILocationResponse[], IQueried> {
+export default class LocationService extends AbstractWeatherService<ILocation[], IQueried> {
+
+  // set singleton
+  static instance = new LocationService();
 
    constructor() {
     //
@@ -8,11 +11,12 @@ export default class LocationService extends AbstractWeatherService<ILocationRes
     //
     // set http://api.weatherapi.com/v1/search.json as the endpoint
     super(locationEndpoint);
+
   }
 
 }
 
-export interface ILocationResponse {
+export interface ILocation {
   id: number
   name: string
   region: string
