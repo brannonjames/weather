@@ -14,6 +14,14 @@ export default class LocationService extends AbstractWeatherService<ILocation[],
 
   }
 
+  static getCityName(location: ILocation) : string {
+    return location.name.split(',')[0];
+  }
+
+  static getStateName(location: ILocation) : string {
+    return location.region;
+  }
+
 }
 
 export interface ILocation {

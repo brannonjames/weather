@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { Provider } from 'react-redux';
+import styled from 'styled-components';
 import LocationDisplay from '../LocationDisplay/LocationDisplay.component';
-import './App.css';
 import {useLocation} from "../../hooks/location.hooks";
 import {useForecast} from "../../hooks/forecast.hooks";
 import ForecastService from "../../services/ForecastService/ForecastService";
@@ -9,6 +9,9 @@ import ForecastService from "../../services/ForecastService/ForecastService";
 // The number of forecast days is limited by the free tier on weatherapi.com
 const FORECAST_DAYS = 3;
 
+//
+// MAIN COMPONENT
+//
 function App() {
 
   const [location] = useLocation();
@@ -23,12 +26,24 @@ function App() {
   }, [location.url]);
 
   return (
-    <div className="App">
-      <header className="App-header">
+    <Main>
+      <header>
         <LocationDisplay />
       </header>
-    </div>
+    </Main>
   );
 }
 
 export default App;
+
+//
+// STYLED COMPONENTS
+//
+const Main = styled.main`
+  margin: 0;  
+  text-align: center;
+  height: 100vh;
+  width: calc(100% - 24px);
+  color: white;
+  padding: 12px;
+`;
