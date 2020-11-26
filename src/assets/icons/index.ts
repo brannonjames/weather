@@ -5,3 +5,8 @@ export default {
   day: dayIcons,
   night: nightIcons
 }
+
+export enum WeatherType {
+  DAY = 'day',
+  NIGHT =  'night'
+}

@@ -87,14 +87,12 @@ const DisplayInput = styled.input`
 `;
 
 const SuggestionList = styled.ul`
-  list-style: none;
   position: absolute;
   top: 100%;
   left: 0;
   right: 0; 
   font-size: 1.1rem;
   padding: 12px 0 0 0;
-  margin: 0;
   background-color: #62a9ef;
   border-bottom-left-radius: 4px;
   border-bottom-right-radius: 4px;

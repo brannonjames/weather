@@ -1,4 +1,5 @@
 import AbstractWeatherService, {IQueried} from '../AbstractWeatherService';
+import {WeatherType} from "../../assets/icons";
 
 export default class ForecastService extends AbstractWeatherService<IForecast, IRequestParams> {
 
@@ -12,6 +13,30 @@ export default class ForecastService extends AbstractWeatherService<IForecast, I
     // set http://api.weatherapi.com/v1/search.json as the endpoint
     super(locationEndpoint);
 
+  }
+
+  /**
+   * @param url - the URL for the icon in weather conditions
+   * @returns returns the first matching 3 digit number, in this cast the icon code
+   */
+  static getIconCodeFromUrl = (url: string) : string  => {
+    const result = url.match(/[0-9][0-9][0-9]/) || [];
+    if (!result[0]) {
+      throw new Error('No icon code match for URL: ' + url);
+    }
+    return result[0] || '';
+  };
+
+  /**
+   * @param url - the URL for the icon in weather conditions
+   * @returns returns a {WeatherType} ('day' or 'night')
+   */
+  static getWeatherTypeFromUrl = (url: string) : WeatherType => {
+    const result = url.match(/day|night/) || [];
+    if (!result[0]) {
+      throw new Error('No WeatherType match for URL: ' + url);
+    }
+    return result[0] === 'day' ? WeatherType.DAY : WeatherType.NIGHT;
   }
 
 }

@@ -2,9 +2,10 @@ import React, {useEffect} from 'react';
 import styled from 'styled-components';
 import LocationDisplay from '../LocationDisplay/LocationDisplay.component';
 import {useLocation} from "../../hooks/location.hooks";
-import {useForecast} from "../../hooks/forecast.hooks";
+import {useForecast, useIsDay} from "../../hooks/forecast.hooks";
 import ForecastService from "../../services/ForecastService/ForecastService";
 import CurrentWeatherCondition from "../CurrentWeatherCondition/CurrentWeatherCondition.component";
+import HourlyForecast from '../HourlyForecast/HourlyForecast.component';
 
 // The number of forecast days is limited by the free tier on weatherapi.com
 const FORECAST_DAYS = 3;
@@ -16,6 +17,17 @@ function App() {
 
   const [location] = useLocation();
   const [, setForecast] = useForecast();
+  const isDay = useIsDay();
+
+  useEffect(() => {
+    // make the background darker at nightime
+    if (!isDay) {
+      const body = document.querySelector('body');
+      if (body) {
+        body.style.backgroundColor = '#162d70';
+      }
+    }
+  }, [isDay]);
 
   useEffect(() => {
     if (location.url) {
@@ -30,6 +42,7 @@ function App() {
       <header>
         <LocationDisplay />
         <CurrentWeatherCondition />
+        <HourlyForecast />
       </header>
     </Main>
   );
@@ -41,10 +54,11 @@ export default App;
 // STYLED COMPONENTS
 //
 const Main = styled.main`
-  margin: 0;  
+  margin: 0 auto;  
   text-align: center;
   height: 100vh;
   width: calc(100% - 24px);
   color: white;
   padding: 12px;
+  max-width: 900px;
 `;
