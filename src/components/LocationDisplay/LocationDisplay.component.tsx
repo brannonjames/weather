@@ -82,7 +82,7 @@ const DisplayInput = styled.input`
   color: white;
   border: none;
   &:focus {
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: #62a9ef;
   }
 `;
 
@@ -95,7 +95,7 @@ const SuggestionList = styled.ul`
   font-size: 1.1rem;
   padding: 12px 0 0 0;
   margin: 0;
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: #62a9ef;
   border-bottom-left-radius: 4px;
   border-bottom-right-radius: 4px;
 `;

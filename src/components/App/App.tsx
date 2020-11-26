@@ -1,10 +1,10 @@
-import React, { useEffect } from 'react';
-import { Provider } from 'react-redux';
+import React, {useEffect} from 'react';
 import styled from 'styled-components';
 import LocationDisplay from '../LocationDisplay/LocationDisplay.component';
 import {useLocation} from "../../hooks/location.hooks";
 import {useForecast} from "../../hooks/forecast.hooks";
 import ForecastService from "../../services/ForecastService/ForecastService";
+import CurrentWeatherCondition from "../CurrentWeatherCondition/CurrentWeatherCondition.component";
 
 // The number of forecast days is limited by the free tier on weatherapi.com
 const FORECAST_DAYS = 3;
@@ -29,6 +29,7 @@ function App() {
     <Main>
       <header>
         <LocationDisplay />
+        <CurrentWeatherCondition />
       </header>
     </Main>
   );

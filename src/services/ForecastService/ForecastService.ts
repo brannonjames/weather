@@ -22,11 +22,7 @@ export interface ICurrent {
   temp_c: number
   temp_f: number
   is_day: number
-  condition: {
-    text: string
-    icon: string
-    code: number
-  }
+  condition: ICondition
   wind_mph: number
   wind_kph: number
   wind_degree: number
@@ -52,11 +48,7 @@ export interface IForecastHour {
   temp_c: number
   temp_f: number
   is_day: number
-  condition: {
-    text: string
-    icon: string
-    code: number
-  }
+  condition: ICondition
   wind_mph: number
   wind_kph: number
   wind_degree: number
@@ -85,6 +77,12 @@ export interface IForecastHour {
   gust_kph: number
 }
 
+export interface ICondition {
+  text: string
+  icon: string
+  code: number
+}
+
 export interface IForecastDay {
   date: string
   date_epoch: number
@@ -106,11 +104,7 @@ export interface IForecastDay {
     daily_chance_of_rain: number
     daily_will_it_snow: number
     daily_chance_of_snow: number
-    condition: {
-      text: string
-      icon: string
-      code: number
-    }
+    condition: ICondition
     uv: number
   }
   astro: {
