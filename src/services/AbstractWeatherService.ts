@@ -2,7 +2,7 @@ import axios from 'axios';
 
 export default abstract class AbstractWeatherService<R, P> {
 
-  protected API_URL: string = 'http://api.weatherapi.com/v1';
+  protected API_URL: string = 'https://api.weatherapi.com/v1';
   private API_KEY?: string = process.env.REACT_APP_WEATHER_API_KEY;
   private readonly url: string;
 
