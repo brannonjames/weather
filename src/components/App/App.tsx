@@ -53,7 +53,7 @@ export default App;
 //
 // STYLED COMPONENTS
 //
-const Main = styled.main`
+const Main = styled.div`
   margin: 0 auto;  
   text-align: center;
   height: 100vh;

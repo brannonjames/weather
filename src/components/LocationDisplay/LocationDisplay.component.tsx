@@ -44,6 +44,7 @@ const LocationDisplay = () => {
       <DisplayInput
         value={inputValue}
         onChange={e => setInputValue(e.target.value)}
+        placeholder="Select a city.."
       />
       {
         searchSuggestions.length > 0 && (
@@ -74,13 +75,14 @@ const Container = styled.div`
 `;
 
 const DisplayInput = styled.input`
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 6px;
   width: calc(100% - 12px);
   padding: 6px;
   font-size: 2.4rem;
   text-align: center;
   background-color: transparent;
   color: white;
-  border: none;
   &:focus {
     background-color: #62a9ef;
   }
