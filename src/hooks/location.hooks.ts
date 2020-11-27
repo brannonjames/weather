@@ -1,4 +1,3 @@
-import { useCallback } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import {getLocation} from "../store/location/location.selectors";
 import {StateHookTuple} from "./index";

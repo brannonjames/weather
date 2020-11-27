@@ -1,12 +1,10 @@
-import { useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import {StateHookTuple} from "./index";
-import {ICondition, IForecast, IForecastHour} from "../services/ForecastService/ForecastService";
+import {ICondition, IForecast} from "../services/ForecastService/ForecastService";
 import {
   getCurrentCondition,
   getCurrentTempature,
-  getForecast,
-  getTodaysHourlyForecast
+  getForecast
 } from "../store/forecast/forecast.selectors";
 import {setForecast} from "../store/forecast/forecast.actions";
 import {getIsMetric} from "../store/settings/settings.selectors";
@@ -30,8 +28,4 @@ export const useCurrentTempature = () : string => {
 export const useIsDay = () : boolean => {
   const [forecast] = useForecast();
   return Boolean(forecast.current.is_day);
-};
-
-export const useTodaysHourlyForecast = () : IForecastHour[] => {
-  return useSelector(getTodaysHourlyForecast);
 };
