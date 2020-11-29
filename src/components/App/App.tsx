@@ -6,6 +6,7 @@ import {useForecast, useIsDay} from "../../hooks/forecast.hooks";
 import ForecastService from "../../services/ForecastService/ForecastService";
 import CurrentWeatherCondition from "../CurrentWeatherCondition/CurrentWeatherCondition.component";
 import HourlyForecast from '../HourlyForecast/HourlyForecast.component';
+import DailyForecast from '../DailyForecast/DailyForecast.component'
 
 // The number of forecast days is limited by the free tier on weatherapi.com
 const FORECAST_DAYS = 3;
@@ -43,6 +44,7 @@ function App() {
         <LocationDisplay />
         <CurrentWeatherCondition />
         <HourlyForecast />
+        <DailyForecast />
       </header>
     </Main>
   );

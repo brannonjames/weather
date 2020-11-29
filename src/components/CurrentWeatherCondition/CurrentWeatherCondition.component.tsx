@@ -85,7 +85,6 @@ const Container = styled.div`
 const Condition = styled.div``;
 
 const StyledText = styled.p`
-  margin: 0;
   font-size: 1rem;
 `;
 

@@ -13,4 +13,10 @@ describe('DateService methods', () => {
 
   });
 
+  it('returns the correct day of the week', () => {
+    const testStr1 = '2020-11-29';
+    const result1 = DateService.convertDateStrToDayofWeek(testStr1);
+    expect(result1).toEqual('Sunday');
+  });
+
 });

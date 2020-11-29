@@ -11,6 +11,12 @@
 REACT_APP_WEATHER_API_KEY=XXXX
 ```
 4. `npm start` or `yarn start`
-5. That's it! a development server should open the app in your default browser. Automatic changes will automatically update 
+5. That's it! a development server should open the app in your default browser. Automatic changes will automatically update
+
+#### Testing
+
+To test run `npm test`
+
+See [puppeteer](https://github.com/brannonjames/weather/tree/puppeteer) branch initial integration testing setup 
 
 
