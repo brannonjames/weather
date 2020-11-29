@@ -66,7 +66,7 @@ export default HourlyForecast;
 // UTILITIES
 //
 const convertDatetoAMPM  = (date:  Date) : string => {
-  const hours = date.getHours();
+  const hours = Number(date.getHours());
   if (hours > 12) {
     return `${hours % 12}PM`;
   }
