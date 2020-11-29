@@ -4,6 +4,7 @@ import {useForecast} from "../../hooks/forecast.hooks";
 import {useIsMetric} from "../../hooks/settings.hooks";
 import WeatherIcon from "../WeatherIcon/WeatherIcon.component";
 import ForecastService from "../../services/ForecastService/ForecastService";
+import DateService from "../../services/DateService/DateService";
 
 // The number of hours to show in the list
 // Hours should extend into the next day
@@ -43,11 +44,9 @@ const HourlyForecast = () => {
               condition
             } = hourForecast;
             const temp = isMetric ? temp_c : temp_f;
-            // need to replace center whitespace with T so certain browsers can create Date object
-            const date = new Date(time.replace(/\s/, 'T'));
             return (
               <HourForecast key={time_epoch}>
-                <div>{convertDatetoAMPM(date)}</div>
+                <div>{DateService.convertDateStringtoAMPM(time)}</div>
                 <WeatherIcon
                   code={ForecastService.getIconCodeFromUrl(condition.icon)}
                   type={ForecastService.getWeatherTypeFromUrl(condition.icon)}
@@ -63,23 +62,6 @@ const HourlyForecast = () => {
 };
 
 export default HourlyForecast;
-
-//
-// UTILITIES
-//
-const convertDatetoAMPM  = (date:  Date) : string => {
-  const hours = Number(date.getHours());
-  if (hours > 12) {
-    return `${hours % 12}PM`;
-  }
-  if (hours === 0) {
-    return '12AM';
-  }
-  if (hours  === 12) {
-    return '12PM';
-  }
-  return `${hours}PM`;
-};
 
 //
 // STYLED COMPONENTS
