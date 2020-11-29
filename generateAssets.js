@@ -4,7 +4,7 @@ const daytimeIcons = fs.readdirSync('./src/assets/icons/day');
 const nighttimeIcons = fs.readdirSync('./src/assets/icons/night');
 
 const generateAssetEntry = (dir) => {
-  const entryFilePath = dir + '/index.ts';
+  const entryFilePath = dir + '/index.js';
   if (fs.existsSync(entryFilePath)) {
     fs.unlinkSync(entryFilePath);
   }

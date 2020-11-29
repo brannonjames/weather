@@ -42,6 +42,7 @@ const LocationDisplay = () => {
   return (
     <Container>
       <DisplayInput
+        id="display-input"
         value={inputValue}
         onChange={e => setInputValue(e.target.value)}
         placeholder="Select a city.."
@@ -53,7 +54,7 @@ const LocationDisplay = () => {
               searchSuggestions.map((location: ILocation) => {
                 const title = `${LocationService.getCityName(location)}, ${LocationService.getStateName(location)}`;
                 return (
-                  <Suggestion key={location.id}>
+                  <Suggestion key={location.id} className="search-suggestion">
                     <a href="#" onClick={handleLocationClick(location)}>{title}</a>
                   </Suggestion>
                 )
