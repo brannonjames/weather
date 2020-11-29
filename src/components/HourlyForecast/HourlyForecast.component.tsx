@@ -43,9 +43,11 @@ const HourlyForecast = () => {
               condition
             } = hourForecast;
             const temp = isMetric ? temp_c : temp_f;
+            // need to replace center whitespace with T so certain browsers can create Date object
+            const date = new Date(time.replace(/\s/, 'T'));
             return (
               <HourForecast key={time_epoch}>
-                <div>{convertDatetoAMPM(new Date(time))}</div>
+                <div>{convertDatetoAMPM(date)}</div>
                 <WeatherIcon
                   code={ForecastService.getIconCodeFromUrl(condition.icon)}
                   type={ForecastService.getWeatherTypeFromUrl(condition.icon)}
