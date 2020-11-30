@@ -1,6 +1,12 @@
 # Awesome Weather
 
-### [Live Preview]()
+### [Live Preview](https://weather.jimmyb.me)
+
+A cool mobile-first weather app that tells you the weather, and more! (well maybe not yet...). In future iterations I plan on displaying astronomical data
+such a moon phases, sunrise/sunset, ISS location info. Also plan on adding PWA support.
+
+This app also uses `redux-persist`, a library for persisting certain pieces of redux state between browser refreshes.
+ 
 
 #### How to get running locally
 1. Clone this repo
