@@ -17,6 +17,11 @@ REACT_APP_WEATHER_API_KEY=XXXX
 
 To test run `npm test`
 
+Tests will also be ran in Github Action anytime changes to 'main' branch is made (or when manually ran)
+
 See [puppeteer](https://github.com/brannonjames/weather/tree/puppeteer) branch initial integration testing setup 
+
+
+#### [TODO](https://github.com/brannonjames/weather/projects/1)
 
 
