@@ -7,6 +7,7 @@ import ForecastService from "../../services/ForecastService/ForecastService";
 import CurrentWeatherCondition from "../CurrentWeatherCondition/CurrentWeatherCondition.component";
 import HourlyForecast from '../HourlyForecast/HourlyForecast.component';
 import DailyForecast from '../DailyForecast/DailyForecast.component'
+import UnitSelector from "../UnitSelector/UnitSelector.component";
 
 // The number of forecast days is limited by the free tier on weatherapi.com
 const FORECAST_DAYS = 3;
@@ -42,10 +43,15 @@ function App() {
     <Main>
       <header>
         <LocationDisplay />
+      </header>
+      <main>
         <CurrentWeatherCondition />
         <HourlyForecast />
         <DailyForecast />
-      </header>
+      </main>
+      <footer>
+        <UnitSelector />
+      </footer>
     </Main>
   );
 }
